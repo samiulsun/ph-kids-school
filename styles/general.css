@@ -86,7 +86,7 @@ nav ul li:hover {
 	.logo-txt {
 		display: none;
 	}
-	ul li {
+	nav ul li {
 		display: none;
 	}
 	.btn {
@@ -169,6 +169,24 @@ nav ul li:hover {
 	text-align: center;
 	padding: 40px 24px;
 }
+.card-two {
+	box-shadow: inset 0px 0px 28.3px 0.94px rgba(0, 0, 0, 0.05);
+	background: linear-gradient(
+			180deg,
+			rgb(255, 244, 220),
+			rgba(255, 255, 255, 0) 40%
+		),
+		rgb(255, 255, 255);
+}
+.card-three {
+	box-shadow: inset 0px 0px 28.3px 0.94px rgba(0, 0, 0, 0.05);
+	background: linear-gradient(
+			180deg,
+			rgb(238, 225, 255),
+			rgba(255, 255, 255, 0) 40%
+		),
+		rgb(255, 255, 255);
+}
 .card-img {
 	max-width: 100%;
 	height: 120px;
@@ -189,9 +207,15 @@ nav ul li:hover {
 	margin-bottom: 40px;
 	font-size: 12px;
 	opacity: 0.7;
+	cursor: pointer;
+}
+.card-btn:hover {
+	opacity: 1;
+	scale: 1.2;
 }
 .arrow-btn-container {
-	margin-top: 40px;
+	margin-top: 30px;
+	margin-bottom: 120px;
 	text-align: center;
 }
 .arrow-btn {
@@ -203,7 +227,6 @@ nav ul li:hover {
 	font-weight: bold;
 	font-size: 20px;
 	margin-right: 2px;
-	/*  */
 	color: rgb(255, 255, 255);
 	font-family: Font Awesome 5 Free;
 	font-size: 24px;
@@ -212,6 +235,7 @@ nav ul li:hover {
 	letter-spacing: 0%;
 	text-align: center;
 	padding: 10px 15px;
+	cursor: pointer;
 }
 @media screen and (max-width: 576px) {
 	.card-container {
@@ -222,62 +246,86 @@ nav ul li:hover {
 		margin: 0 20px;
 	}
 }
+
 .stories {
-	background: url('../assets/bg.png'),
-		linear-gradient(0deg, rgba(254, 163, 1, 0.3), rgba(255, 255, 255, 0.3) 100%);
+	background: linear-gradient(
+			0deg,
+			rgba(254, 163, 1, 0.3),
+			rgba(255, 255, 255, 0.3) 100%
+		),
+		url('../assets/bg.png');
 	background-repeat: repeat;
+	background-size: cover; /* Ensure proper background rendering */
 	padding-bottom: 80px;
+	overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .stories-container {
 	max-width: 1100px;
 	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap; /* Ensure items wrap within the container */
 	align-items: stretch;
 	gap: 20px;
+	box-sizing: border-box; /* Include padding and border in width/height */
 }
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
 }
+
 .storeis-first-container {
-	max-width: 50%;
+	width: 100%; /* Use width instead of max-width */
+	flex: 1; /* Allow flexible resizing */
 	border-radius: 16px;
 	background: rgb(255, 255, 255);
 }
+
 .stories-second-container {
-	max-width: 50%;
+	width: 100%; /* Use width instead of max-width */
+	flex: 1; /* Allow flexible resizing */
 }
+
 .stories-img {
-	max-width: 100%;
+	width: 100%; /* Ensure the image stays within its container */
+	height: auto; /* Maintain aspect ratio */
 	border-radius: 16px 16px 0px 0px;
 }
+
 .stories-text-container {
 	padding: 20px;
 	position: relative;
 }
+
 .stories-title {
 	font-size: 22px;
 	margin: 20px 0;
 	opacity: 0.8;
 }
+
 .stories-description {
 	font-size: 18px;
 	opacity: 0.6;
 }
+
 .story {
 	border-radius: 16px;
 	background: rgb(255, 255, 255);
 }
+
 .story-title {
 	font-size: 12px;
 	opacity: 0.7;
 	margin-bottom: 5px;
 }
+
 .story-description {
 	font-size: 8px;
 	opacity: 0.6;
 }
+
 .date {
 	position: absolute;
 	top: -15px;
@@ -290,22 +338,43 @@ nav ul li:hover {
 	font-size: 0.85rem;
 	margin-bottom: 1rem;
 }
+
+/* Responsive Design */
 @media screen and (max-width: 576px) {
 	.storeis-first-container {
-		display: none;
+		display: none; /* Hide the first container on small screens */
 	}
 	.stories-second-container {
-		max-width: 100%;
+		width: 100%; /* Ensure it takes full width */
 	}
 	.stories-container {
-		margin: 20px;
+		margin: 0 10px; /* Add margin within the screen */
+		padding: 0 10px; /* Ensure no overflow */
+	}
+
+	.grid {
+		grid-template-columns: 1fr; /* Make the grid single column */
+		gap: 10px;
+	}
+
+	.date {
+		top: -9px;
+		left: 20px;
+		border-radius: 10px;
+		padding: 0.1rem 0.5rem;
+		font-size: 0.4rem;
+		margin-bottom: 0.5rem;
 	}
 }
+
+/* footer start here */
+/* =============================== */
 .footer {
 	padding: 100px 140px;
 	background: rgb(1, 172, 253);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 }
 .logo-container {
 	gap: 5px;
@@ -318,7 +387,62 @@ nav ul li:hover {
 	color: white;
 }
 .footer-description {
-	font-size: 14px;
+	font-size: 1rem;
 	opacity: 0.7;
 	color: white;
+}
+.footer-about-school-title {
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.footer-nav-ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	color: white;
+	list-style: none;
+	opacity: 0.7;
+}
+.keep-in-touch {
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: white;
+}
+.social-img-container {
+	gap: 5px;
+	justify-content: center;
+}
+@media (max-width: 576px) {
+	.keep-in-touch {
+		text-align: left;
+	}
+	.social-img-container {
+		justify-content: flex-start;
+	}
+	.footer {
+		grid-template-columns: 1fr;
+		text-align: start;
+		gap: 30px;
+		padding: 20px;
+	}
+
+	.logo-container {
+		justify-content: flex-start;
+	}
+
+	.footer-description {
+		font-size: 8px;
+	}
+	.footer-about-school-title {
+		text-align: left;
+	}
+	.footer-nav-ul {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 }

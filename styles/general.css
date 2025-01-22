@@ -280,19 +280,19 @@ nav ul li:hover {
 		),
 		url('../assets/bg.png');
 	background-repeat: repeat;
-	background-size: cover; /* Ensure proper background rendering */
+	background-size: cover;
 	padding-bottom: 80px;
-	overflow-x: hidden; /* Prevent horizontal overflow */
+	overflow-x: hidden;
 }
 
 .stories-container {
 	max-width: 1100px;
 	margin: 0 auto;
 	display: flex;
-	flex-wrap: wrap; /* Ensure items wrap within the container */
+	flex-wrap: wrap;
 	align-items: stretch;
 	gap: 20px;
-	box-sizing: border-box; /* Include padding and border in width/height */
+	box-sizing: border-box;
 }
 
 .grid {
@@ -302,20 +302,20 @@ nav ul li:hover {
 }
 
 .storeis-first-container {
-	width: 100%; /* Use width instead of max-width */
-	flex: 1; /* Allow flexible resizing */
+	width: 100%;
+	flex: 1;
 	border-radius: 16px;
 	background: rgb(255, 255, 255);
 }
 
 .stories-second-container {
-	width: 100%; /* Use width instead of max-width */
-	flex: 1; /* Allow flexible resizing */
+	width: 100%;
+	flex: 1;
 }
 
 .stories-img {
-	width: 100%; /* Ensure the image stays within its container */
-	height: auto; /* Maintain aspect ratio */
+	width: 100%;
+	height: auto;
 	border-radius: 16px 16px 0px 0px;
 }
 
@@ -431,6 +431,12 @@ nav ul li:hover {
 	color: white;
 	list-style: none;
 	opacity: 0.7;
+	transition: border 0.15s;
+	cursor: pointer;
+}
+.footer-nav-ul li:hover {
+	color: black;
+	border-bottom: 0.5px solid black;
 }
 .keep-in-touch {
 	font-size: 18px;
@@ -441,6 +447,13 @@ nav ul li:hover {
 .social-img-container {
 	gap: 5px;
 	justify-content: center;
+}
+.social-img-container img {
+	cursor: pointer;
+	transition: scale 0.15s;
+}
+.social-img-container img:hover {
+	scale: 1.1;
 }
 @media (max-width: 576px) {
 	.keep-in-touch {

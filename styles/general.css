@@ -79,6 +79,31 @@ nav ul li:hover {
 	transition: all 0.3s ease-in-out;
 	background-color: #101010;
 }
+.animation-scroll {
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+}
+
+.animation-scroll p {
+	display: inline-block;
+	animation: scroll 5s linear infinite;
+	padding: 8px;
+	font-size: 14px;
+	color: #333;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
 @media screen and (max-width: 576px) {
 	.hamburger {
 		display: block;
